@@ -1,0 +1,12 @@
+[Unit]
+Description=Kafka2ElasticSearch Service
+After=multi-user.target
+
+[Service]
+Type=simple
+User=kafka2elasticsearch
+ExecStart=/usr/bin/python3 /opt/kafka2elasticsearch/kafka2elasticsearch.py delivery-event delivery-event-consumer
+#StandardInput=tty-force
+
+[Install]
+WantedBy=multi-user.target
